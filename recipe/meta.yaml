@@ -10,7 +10,7 @@ source:
   sha256: c0fda1fa6e52dc85de27156cd847088a72d40d9de6514f7efa57c8d93134a54c
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -20,15 +20,12 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
   host:
-    - openssl
     - zstd  # [osx]
     - krb5  # [osx]
-  run:
-    - mysql-client
-
+  
 test:
   commands:
-    - mariadb_config  # [not win]
+    - mariadb_config --version  # [not win]
     - mysql --version
 
 about:
