@@ -3,7 +3,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version | replace("-MS", "") }}
 
 source:
   url: https://github.com/mariadb-corporation/mariadb-connector-c/archive/{{ version }}.tar.gz
@@ -22,6 +22,8 @@ requirements:
   host:
     - zstd  # [osx]
     - krb5  # [osx]
+    - libcurl
+    - openssl
 test:
   commands:
     - mariadb_config --version  # [not win]
