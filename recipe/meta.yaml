@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mariadb-corporation/mariadb-connector-c/archive/{{ version }}.tar.gz
-  sha256: 4e3d48755d142ce1eed471ccc5ab66e6927d6727335b3e18094b55d07f85cf64
+  sha256: b31d9b385e90d793ca9c3e3186054509593a97224f93bc5b6ad6628110b17e44
 
 build:
   number: 0
