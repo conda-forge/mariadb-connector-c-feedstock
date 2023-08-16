@@ -1,9 +1,9 @@
 {% set name = "mariadb-connector-c" %}
-{% set version = "3.3.6-MS" %}
+{% set version = "3.3.6-MS1" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version | replace("-MS", "") }}
+  version: {{ version | replace("-MS1", "") }}
 
 source:
   url: https://github.com/mariadb-corporation/mariadb-connector-c/archive/{{ version }}.tar.gz
