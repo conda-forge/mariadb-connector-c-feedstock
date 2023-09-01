@@ -22,6 +22,10 @@ requirements:
   host:
     - zstd  # [osx]
     - krb5  # [osx]
+    - libcurl
+    - openssl
+  
+
 test:
   commands:
     - mariadb_config --version  # [not win]
