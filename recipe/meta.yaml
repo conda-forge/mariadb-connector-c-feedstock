@@ -20,7 +20,7 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
   host:
-    - zstd  # [osx]
+    - zstd
     - krb5  # [osx]
     - libcurl
     - openssl
