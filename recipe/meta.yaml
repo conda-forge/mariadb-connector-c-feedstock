@@ -1,5 +1,5 @@
 {% set name = "mariadb-connector-c" %}
-{% set version = "3.3.5" %}
+{% set version = "3.3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/mariadb-corporation/mariadb-connector-c/archive/v{{ version }}.tar.gz
-  sha256: c0fda1fa6e52dc85de27156cd847088a72d40d9de6514f7efa57c8d93134a54c
+  sha256: 95006761ed80c17a24245c0b44a38850e47c8175201cf6ff6d5e1afcf2732dea
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -22,6 +22,8 @@ requirements:
   host:
     - zstd  # [osx]
     - krb5  # [osx]
+    - libcurl
+    - openssl
   
 test:
   commands:
