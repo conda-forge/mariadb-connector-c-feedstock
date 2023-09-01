@@ -29,7 +29,7 @@ requirements:
 test:
   commands:
     - mariadb_config --version  # [not win]
-    - mariadb_check.exe  # [win]
+    - my_print_defaults --version # [win]
 
 about:
   home: https://github.com/mariadb-corporation/mariadb-connector-c/
