@@ -21,10 +21,10 @@ requirements:
     - ninja  # [win]
   host:
     - zstd
-    - krb5  # [osx]
+    - krb5
     - libcurl
     - openssl
-  
+    - setuptools_dso
 
 test:
   commands:
