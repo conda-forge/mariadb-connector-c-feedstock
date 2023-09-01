@@ -24,6 +24,7 @@ requirements:
     - krb5  # [osx]
     - libcurl
     - openssl
+    - setuptools_dso
   
 test:
   commands:
