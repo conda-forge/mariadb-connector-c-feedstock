@@ -11,7 +11,8 @@ cmake %CMAKE_ARGS% ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
       ..
 if errorlevel 1 exit 1
-ctest --rerun-faild --output-on-failure
+ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR\build\unittest\libmariadb
+ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR\build\unittest\mytap
 
 ninja
 if errorlevel 1 exit 1
