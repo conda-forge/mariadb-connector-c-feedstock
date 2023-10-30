@@ -25,6 +25,7 @@ requirements:
     - libcurl
     - openssl
     - setuptools_dso
+    - python-kerberos  # [not win]
 
 test:
   commands:
