@@ -12,6 +12,8 @@ source:
 build:
   number: 1
   skip: true  # [osx]
+  script:
+    - export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig  # [ppc64le]
 
 requirements:
   build:
