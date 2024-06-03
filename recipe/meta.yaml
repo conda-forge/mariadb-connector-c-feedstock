@@ -10,8 +10,7 @@ source:
   sha256: 23efc2da9c50d71dc0bb4f25c07f9437d5b8e2b0cbd529091a83d00ccf3f6d20
 
 build:
-  number: 0
-  skip: true  # [osx and ppc64le]
+  number: 1
   script:
     - export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig  # [ppc64le]
 
