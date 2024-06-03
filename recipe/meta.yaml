@@ -10,7 +10,7 @@ source:
   sha256: 23efc2da9c50d71dc0bb4f25c07f9437d5b8e2b0cbd529091a83d00ccf3f6d20
 
 build:
-  number: 1
+  number: 2
   script:
     - export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig  # [ppc64le]
 
@@ -18,12 +18,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
     - cmake
     - make  # [not win]
     - ninja  # [win]
-    - zlib # [osx]
   host:
+    - zlib  # [osx]
     - zstd
     - krb5  # [not win]
     - libcurl
