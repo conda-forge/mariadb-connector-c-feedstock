@@ -22,6 +22,7 @@ requirements:
     - cmake
     - make  # [not win]
     - ninja  # [win]
+    - zlib # [osx]
   host:
     - zstd
     - krb5  # [not win]
