@@ -23,8 +23,8 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
   host:
-    - zstd
-    - krb5  # [not win]
+    #- zstd
+    #- krb5  # [not win]
     - libcurl
     - openssl  # [not win]
     - setuptools_dso  # [not win]
