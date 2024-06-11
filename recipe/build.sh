@@ -17,7 +17,7 @@ cd build
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      ..
 
-cmake --build . --config RelWithDebInfo -j
+cmake --build . --config RelWithDebInfo -j -DWITH_ZLIB=system
 
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
