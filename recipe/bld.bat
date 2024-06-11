@@ -10,12 +10,12 @@ cmake %CMAKE_ARGS% ^
       -DINSTALL_DOCREADMEDIR_STANDALONE="%cd%/junk" ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
       ..
+
+cmake --build . --config RelWithDebInfo -j
+
 if errorlevel 1 exit 1
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\libmariadb
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\mytap
-
-cmake --build . --config RelWithDebInfo -j
-if errorlevel 1 exit 1
 
 cmake --install . --config RelWithDebInfo --prefix %LIBRARY_PREFIX%
 if errorlevel 1 exit 1
