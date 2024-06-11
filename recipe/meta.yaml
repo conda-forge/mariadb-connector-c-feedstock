@@ -22,7 +22,6 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
   host:
-    - zlib  # [osx]
     - zstd
     - krb5  # [not win]
     - libcurl
