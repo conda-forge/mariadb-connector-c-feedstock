@@ -9,8 +9,9 @@ cd build
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      ..
 
-make -k -j${CPU_COUNT}
+cmake --build . --config RelWithDebInfo -j
+
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
-# make install
-cmake --build .
+
+cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
