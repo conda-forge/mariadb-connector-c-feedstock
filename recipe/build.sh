@@ -12,6 +12,7 @@ mkdir build
 cd build
 
  cmake ${CMAKE_ARGS} \
+     -DWITH_ZSTD=system \
      -DCMAKE_BUILD_TYPE=Release \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      ..
