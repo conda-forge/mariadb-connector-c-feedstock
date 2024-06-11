@@ -7,6 +7,7 @@ cmake %CMAKE_ARGS% ^
       -DCMAKE_C_FLAGS="-I%LIBRARY_INC%" ^
       -DCMAKE_CXX_FLAGS="-I%LIBRARY_INC%" ^
       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+      -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DINSTALL_DOCREADMEDIR_STANDALONE="%cd%/junk" ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
       ..
@@ -17,5 +18,5 @@ if errorlevel 1 exit 1
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\libmariadb
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\mytap
 
-cmake --install . --config RelWithDebInfo
+cmake --install .
 if errorlevel 1 exit 1
