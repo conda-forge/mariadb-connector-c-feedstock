@@ -17,5 +17,5 @@ if errorlevel 1 exit 1
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\libmariadb
 ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\mytap
 
-cmake --install . --config RelWithDebInfo --prefix %LIBRARY_PREFIX%
+cmake --install . --config RelWithDebInfo
 if errorlevel 1 exit 1
