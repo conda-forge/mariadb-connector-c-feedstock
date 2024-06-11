@@ -11,13 +11,24 @@ fi
 mkdir build
 cd build
 
- cmake ${CMAKE_ARGS} \
-     -DWITH_ZLIB=system \
-     -DCMAKE_BUILD_TYPE=Release \
-     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     ..
+if [[ "${target_platform}" == *"osx"* ]]; then
+    cmake ${CMAKE_ARGS} \
+        -DWITH_EXTERNAL_ZLIB=ON=system \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+        -S..
+        -B.
 
-cmake --build . --config RelWithDebInfo -j -DWITH_ZLIB=system
+    cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
+
+elif [[ "${target_platform}" == *"linux"* ]]; then
+    cmake ${CMAKE_ARGS} \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+        ..
+
+    cmake --build . --config RelWithDebInfo -j
+fi
 
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
