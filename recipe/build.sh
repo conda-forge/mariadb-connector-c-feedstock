@@ -18,16 +18,16 @@ if [[ "${target_platform}" == *"osx"* ]]; then
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 
-    #cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
+    # cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
 
 elif [[ "${target_platform}" == *"linux"* ]]; then
     cmake ${CMAKE_ARGS} \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
-
-    cmake --build . --config RelWithDebInfo -j
 fi
+
+cmake --build . --config RelWithDebInfo -j
 
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
