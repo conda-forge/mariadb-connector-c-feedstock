@@ -18,7 +18,7 @@ if [[ "${target_platform}" == *"osx"* ]]; then
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 
-    cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
+    #cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
 
 elif [[ "${target_platform}" == *"linux"* ]]; then
     cmake ${CMAKE_ARGS} \
