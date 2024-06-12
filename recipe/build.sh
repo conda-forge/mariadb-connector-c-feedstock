@@ -13,6 +13,7 @@ cd build
 
 if [[ "${target_platform}" == *"osx"* ]]; then
     cmake ${CMAKE_ARGS} \
+        -DWITH_EXTERNAL_ZLIB=ON \
         -DWITH_ZLIB=system \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
