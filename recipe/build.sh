@@ -28,7 +28,7 @@ elif [[ "${target_platform}" == *"linux"* ]]; then
         ..
 fi
 
-cmake --build . --config RelWithDebInfo -j
+cmake --build . --config RelWithDebInfo -j --target install
 
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
 ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
