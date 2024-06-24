@@ -10,6 +10,9 @@ cmake %CMAKE_ARGS% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DINSTALL_DOCREADMEDIR_STANDALONE="%cd%/junk" ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
+      -DWITH_SSL=ON ^
+      -DAUTH_GSSAPI=ON ^
+      -DDEFAULT_SSL_VERIFY_SERVER_CERT=DYNAMIC ^
       ..
 
 cmake --build . --config RelWithDebInfo -j
