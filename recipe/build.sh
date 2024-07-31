@@ -32,7 +32,7 @@ fi
 
 cmake --build . --config RelWithDebInfo -j --target install
 
-ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
