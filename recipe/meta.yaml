@@ -1,5 +1,5 @@
 {% set name = "mariadb-connector-c" %}
-{% set version = "3.3.10" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mariadb-corporation/mariadb-connector-c/archive/v{{ version }}.tar.gz
-  sha256: 0a79088af2fbde4dbe6655dbc51bbb272b606c0d9116745697e08879e70198a7
+  sha256: 23efc2da9c50d71dc0bb4f25c07f9437d5b8e2b0cbd529091a83d00ccf3f6d20
 
 build:
   number: 4
@@ -36,7 +36,8 @@ test:
 
 about:
   home: https://github.com/mariadb-corporation/mariadb-connector-c/
-  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'
+  summary: |
+    MariaDB Connector/C is used to connect applications developed in C/C++ to MariaDB and MySQL databases.The client library is LGPL licensed. 
   description: |
     MariaDB Connector/C is used to connect applications developed in C/C++ to MariaDB and MySQL databases.The client library is LGPL licensed. 
   license: LGPL-2.1-or-later
