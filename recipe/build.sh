@@ -16,6 +16,8 @@ if [[ "${target_platform}" == *"osx"* ]]; then
         -DWITH_EXTERNAL_ZLIB=ON \
         -DWITH_ZLIB=system \
         -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_SSL=ON \
+        -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 
@@ -24,13 +26,15 @@ if [[ "${target_platform}" == *"osx"* ]]; then
 elif [[ "${target_platform}" == *"linux"* ]]; then
     cmake ${CMAKE_ARGS} \
         -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_SSL=ON \
+        -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 fi
 
 cmake --build . --config RelWithDebInfo -j --target install
 
-ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-ctest --rerun-faild --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}

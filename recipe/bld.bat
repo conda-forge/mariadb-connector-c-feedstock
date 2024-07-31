@@ -11,6 +11,7 @@ cmake %CMAKE_ARGS% ^
       -DINSTALL_DOCREADMEDIR_STANDALONE="%cd%/junk" ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
       -DWITH_SSL=ON ^
+      -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF ^
       -DAUTH_GSSAPI=ON ^
       -DDEFAULT_SSL_VERIFY_SERVER_CERT=DYNAMIC ^
       ..
@@ -18,8 +19,8 @@ cmake %CMAKE_ARGS% ^
 cmake --build . --config RelWithDebInfo -j
 
 if errorlevel 1 exit 1
-ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\libmariadb
-ctest --rerun-faild --output-on-failure --test-dir %SRC_DIR%\build\unittest\mytap
+ctest --rerun-failed --output-on-failure --test-dir %SRC_DIR%\build\unittest\libmariadb
+ctest --rerun-failed --output-on-failure --test-dir %SRC_DIR%\build\unittest\mytap
 
 cmake --install .
 if errorlevel 1 exit 1
