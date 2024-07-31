@@ -16,6 +16,7 @@ if [[ "${target_platform}" == *"osx"* ]]; then
         -DWITH_EXTERNAL_ZLIB=ON \
         -DWITH_ZLIB=system \
         -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_SSL=OFF \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 
@@ -24,6 +25,7 @@ if [[ "${target_platform}" == *"osx"* ]]; then
 elif [[ "${target_platform}" == *"linux"* ]]; then
     cmake ${CMAKE_ARGS} \
         -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_SSL=OFF \
         -DCMAKE_INSTALL_PREFIX=${PREFIX} \
         ..
 fi
