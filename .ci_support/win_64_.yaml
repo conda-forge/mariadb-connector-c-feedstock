@@ -10,6 +10,8 @@ cxx_compiler:
 - vs2019
 libcurl:
 - '8'
+openssl:
+- '3'
 target_platform:
 - win-64
 zstd:

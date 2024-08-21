@@ -7,7 +7,8 @@ Home: https://github.com/mariadb-corporation/mariadb-connector-c/
 
 Package license: LGPL-2.1-or-later
 
-Summary: Simple, fast, extensible JSON encoder/decoder for Python
+Summary: MariaDB Connector/C is used to connect applications developed in C/C++ to MariaDB and MySQL databases.The client library is LGPL licensed.
+
 
 Development: https://github.com/mariadb-corporation/mariadb-connector-c/
 
