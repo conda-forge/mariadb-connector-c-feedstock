@@ -20,6 +20,7 @@ requirements:
     - cmake
     - make  # [not win]
     - ninja  # [win]
+    - curl
   host:
     - zlib  # [osx]
     - zstd
