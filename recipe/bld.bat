@@ -12,7 +12,6 @@ cmake %CMAKE_ARGS% ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
       -DWITH_SSL=ON ^
       -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF ^
-      -DAUTH_GSSAPI=ON ^
       ..
 
 cmake --build . --config RelWithDebInfo -j
