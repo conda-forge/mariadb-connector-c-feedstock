@@ -26,7 +26,7 @@ requirements:
     - zstd
     - krb5  # [not win]
     - libcurl
-    - openssl  # [not win]
+    - openssl
     - setuptools_dso  # [not win]
     - python-kerberos  # [not win]
 
