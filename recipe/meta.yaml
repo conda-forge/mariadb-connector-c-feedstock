@@ -24,11 +24,11 @@ requirements:
   host:
     - zlib  # [osx]
     - zstd
-    - krb5  # [not win]
+    - krb5
     - libcurl
     - openssl
     - setuptools_dso  # [not win]
-    - python-kerberos  # [not win]
+    - pykerberos  # [not win]
 
 test:
   commands:
