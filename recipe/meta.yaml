@@ -22,7 +22,7 @@ requirements:
     - ninja  # [win]
     - curl
   host:
-    - zlib  # [osx]
+    - zlib  # [not win]
     - zstd
     - krb5
     - libcurl
