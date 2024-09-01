@@ -11,7 +11,7 @@ fi
 mkdir build
 cd build
 
-make ${CMAKE_ARGS} \
+cmake ${CMAKE_ARGS} \
     -DWITH_EXTERNAL_ZLIB=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
