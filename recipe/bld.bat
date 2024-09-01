@@ -5,8 +5,8 @@ cmake %CMAKE_ARGS% ^
 	-GNinja ^
 	-DCMAKE_BUILD_TYPE="Release" ^
 	-DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
-	-DWITH_SSL=ON ^
 	-DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF ^
+	-DWITH_SSL=OPENSSL ^
 	 ..
 
 cmake --build . --config RelWithDebInfo -j --target install
