@@ -7,3 +7,6 @@ github:
 provider:
   linux_aarch64: default
   linux_ppc64le: default
+build_platform:
+  osx_arm64: osx_64
+test: native_and_emulated

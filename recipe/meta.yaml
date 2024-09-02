@@ -10,8 +10,7 @@ source:
   sha256: 4979916af92aaf7f7b09578897b7dd885d4acd9bfa8a6a0026334dbe98a0d2ab
 
 build:
-  skip: true  # [win]
-  number: 0
+  number: 1 
 
 requirements:
   build:
@@ -23,13 +22,13 @@ requirements:
     - ninja  # [win]
     - curl
   host:
-    - zlib  # [osx]
+    - zlib  # [not win]
     - zstd
-    - krb5  # [not win]
+    - krb5
     - libcurl
     - openssl
     - setuptools_dso  # [not win]
-    - python-kerberos  # [not win]
+    - pykerberos  # [not win]
 
 test:
   commands:

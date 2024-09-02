@@ -11,30 +11,19 @@ fi
 mkdir build
 cd build
 
-if [[ "${target_platform}" == *"osx"* ]]; then
-    cmake ${CMAKE_ARGS} \
-        -DWITH_EXTERNAL_ZLIB=ON \
-        -DWITH_ZLIB=system \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DWITH_SSL=ON \
-        -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
-        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-        ..
-
-    # cmake --build . --config RelWithDebInfo -j -DWITH_EXTERNAL_ZLIB=ON
-
-elif [[ "${target_platform}" == *"linux"* ]]; then
-    cmake ${CMAKE_ARGS} \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DWITH_SSL=ON \
-        -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
-        -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-        ..
-fi
+cmake ${CMAKE_ARGS} \
+    -DWITH_EXTERNAL_ZLIB=ON \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+     ..
 
 cmake --build . --config RelWithDebInfo -j --target install
 
-ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+# Added for osx-arm
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+  ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+  ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+fi
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
