@@ -10,7 +10,7 @@ cmake %CMAKE_ARGS% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       -DINSTALL_DOCREADMEDIR_STANDALONE="%cd%/junk" ^
       -DINSTALL_DOCDIR="%cd%/junk" ^
-      -DWITH_SSL=ON ^
+      ::-DWITH_SSL=ON ^
       -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF ^
       -DAUTH_GSSAPI=ON ^
       ..
