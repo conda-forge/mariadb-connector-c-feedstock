@@ -10,6 +10,8 @@ curl:
 - '8'
 cxx_compiler:
 - vs2019
+krb5:
+- '1.21'
 libcurl:
 - '8'
 openssl:
