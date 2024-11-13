@@ -16,10 +16,9 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-    --build \
      ..
 
-# cmake --build . --config RelWithDebInfo -j --target install
+cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
