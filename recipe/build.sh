@@ -18,7 +18,7 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      ..
 
-cmake --build . --config RelWithDebInfo -j --target install
+# cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
