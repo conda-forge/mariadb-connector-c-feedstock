@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  arch: osx-arm64  # [osx-arm64]
+  skip: True  # [osx-arm64]
 
 requirements:
   build:
