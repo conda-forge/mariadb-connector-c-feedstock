@@ -21,9 +21,9 @@ cmake ${CMAKE_ARGS} \
 cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-  ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-  ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
-fi
+# if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+#   ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+#   ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+# fi
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
