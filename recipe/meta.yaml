@@ -10,13 +10,13 @@ source:
   sha256: 79a1c5a3de86e7daa0a456c502d60dc15debe105932ad6a0d25024908603f433
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}  # [build_platform != target_platform]
+    - {{ stdlib('c') }}  # [build_platform != target_platform]
+    - {{ compiler('cxx') }}  # [build_platform != target_platform]
     - cmake
     - make  # [not win]
     - ninja  # [win]
