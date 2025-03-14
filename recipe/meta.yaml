@@ -10,7 +10,7 @@ source:
   sha256: 79a1c5a3de86e7daa0a456c502d60dc15debe105932ad6a0d25024908603f433
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,6 +21,7 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
     - curl
+    - git  # [not win]
   host:
     - zlib  # [not win]
     - zstd
