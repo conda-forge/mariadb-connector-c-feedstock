@@ -14,13 +14,14 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [build_platform != target_platform]
-    - {{ stdlib('c') }}  # [build_platform != target_platform]
-    - {{ compiler('cxx') }}  # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - {{ compiler('cxx') }}
     - cmake
     - make  # [not win]
     - ninja  # [win]
     - curl
+    - git  # [not win]
   host:
     - zlib  # [not win]
     - zstd
