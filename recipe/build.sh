@@ -12,17 +12,16 @@ mkdir build
 cd build
 
 # -Wno-inline-asm => For osx-arm64, to prevent throwing an error on compilation.
-if [[ "${target_platform" == "osx-arm64" ]]; then
-cmake ${CMAKE_ARGS} \
+if [[ "${target_platform}" == "osx-arm64" ]]; then
+    cmake ${CMAKE_ARGS} \
     -DWITH_EXTERNAL_ZLIB=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
     -Wno-inline-asm \
      ..
-
 else 
-cmake ${CMAKE_ARGS} \
+    cmake ${CMAKE_ARGS} \
     -DWITH_EXTERNAL_ZLIB=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
