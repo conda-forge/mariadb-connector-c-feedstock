@@ -18,7 +18,7 @@ if [[ "${target_platform}" == "osx-arm64" ]]; then
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-    -CMAKE_COMPILE_WARNING_AS_ERROR=OFF \
+    -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
      ..
 else 
     cmake ${CMAKE_ARGS} \
