@@ -23,7 +23,7 @@ requirements:
     - curl
     - git  # [not win]
   host:
-    - zlib  # [not win]
+    - zlib
     - zstd
     - krb5
     - libcurl
