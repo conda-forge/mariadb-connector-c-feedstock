@@ -11,7 +11,7 @@ curl:
 cxx_compiler:
 - vs2022
 krb5:
-- '1.21'
+- '1.22'
 libcurl:
 - '8'
 openssl:
