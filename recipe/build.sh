@@ -20,7 +20,7 @@ if [[ "${target_platform}" == "osx-arm64" ]]; then
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
     -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
     -DWITH_UNIT_TESTS=OFF \
-     -S .. -B .
+     -S ..
 else 
     cmake ${CMAKE_ARGS} \
     -DWITH_EXTERNAL_ZLIB=ON \
@@ -33,11 +33,9 @@ fi
 cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" || "${target_platform}" != "osx-arm64" ]]; then
    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 fi
-ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
