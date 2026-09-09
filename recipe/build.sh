@@ -18,7 +18,7 @@ if [[ "${target_platform}" == "osx-arm64" ]]; then
     -DCMAKE_BUILD_TYPE=Release \
     -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-    -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
+    # -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
      ..
 else 
     cmake ${CMAKE_ARGS} \
@@ -32,9 +32,11 @@ fi
 cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-   ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
-   ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
-fi
+# if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+#    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+#    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
+# fi
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
+ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 
 cmake --install . --config RelWithDebInfo --prefix ${PREFIX}
