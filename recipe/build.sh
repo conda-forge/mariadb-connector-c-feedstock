@@ -33,7 +33,7 @@ fi
 cmake --build . --config RelWithDebInfo -j --target install
 
 # Added for osx-arm
-if [ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ] || [ "${CROSSCOMPILING_EMULATOR}" != "" ] || [ "${target_platform}" != "osx-arm64" ]; then
+if [ "${target_platform}" != "osx-arm64" ]; then
    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/libmariadb
    ctest --rerun-failed --output-on-failure --test-dir $SRC_DIR/build/unittest/mytap
 fi
