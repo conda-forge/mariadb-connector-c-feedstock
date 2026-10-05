@@ -13,6 +13,9 @@ cmake %CMAKE_ARGS% ^
       -DDEFAULT_SSL_VERIFY_SERVER_CERT=OFF ^
       -DAUTH_GSSAPI=ON ^
       -DWITH_EXTERNAL_ZLIB=ON ^
+      -DCLIENT_PLUGIN_DIALOG=STATIC ^
+      -DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC ^
+      -DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC ^
       ..
 
 cmake --build . --config RelWithDebInfo -j --target install
